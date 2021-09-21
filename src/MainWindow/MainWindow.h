@@ -6,6 +6,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtWidgets/QDesktopWidget>
+#include <QFile>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,7 +21,11 @@ private:
 
 	Ui::MainWindow *ui;
 
+	void loudStyles();
+
 public:
+
+	void moveToCentre();
 
 	MainWindow(QWidget *parent = nullptr);
 	~MainWindow();

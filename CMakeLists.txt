@@ -18,6 +18,7 @@ set(SOURCE_FILES
         src/main.cpp
         src/MainWindow/MainWindow.cpp
         src/MainWindow/MainWindow.h
+        qres.qrc
         )
 
 add_executable(Delta ${SOURCE_FILES})
