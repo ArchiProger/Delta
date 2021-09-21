@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/styles">
-        <file>res/styles/mainwindow.css</file>
+        <file alias="mainwindow.css">res/styles/mainwindow.css</file>
     </qresource>
 </RCC>

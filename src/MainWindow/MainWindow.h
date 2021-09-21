@@ -8,6 +8,7 @@
 #include <QMainWindow>
 #include <QtWidgets/QDesktopWidget>
 #include <QFile>
+#include <QPainter>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,7 +22,7 @@ private:
 
 	Ui::MainWindow *ui;
 
-	void loudStyles();
+	void loudCSS(const QString& path);
 
 public:
 

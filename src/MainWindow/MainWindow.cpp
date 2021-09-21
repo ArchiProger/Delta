@@ -11,6 +11,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
 	ui->setupUi(this);
 
+	QPainterPath painPath;
+    painPath.addRoundedRect(rect(), 10, 10, Qt::AbsoluteSize);
+
+    this->setMask(painPath.toFillPolygon().toPolygon());
 	this->setWindowFlags(Qt::CustomizeWindowHint);
 	this->moveToCentre();
 }
@@ -29,9 +33,6 @@ void MainWindow::moveToCentre()
 	this->move(x, y);
 }
 
-void MainWindow::loudStyles()
-{
-	QFile style;
-}
+
 
 
