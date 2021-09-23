@@ -1,0 +1,15 @@
+MainWindow
+{
+    background-color: #323333;
+}
+
+QLineEdit
+{
+    color: darkgray;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    /*border-color: #5fafde;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 11px;*/
+}

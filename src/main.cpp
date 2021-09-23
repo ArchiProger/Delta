@@ -11,7 +11,7 @@ int main (int argc, char *argv[])
 {
 	QApplication app(argc, argv);
 
-	QFile file(":/styles/mainwindow.css");
+	QFile file(":/styles/style.css");
 	file.open(QFile::ReadOnly);
 	app.setStyleSheet(file.readAll());
 
