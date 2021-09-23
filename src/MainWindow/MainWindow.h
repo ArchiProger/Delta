@@ -25,7 +25,7 @@ private:
 	Ui::MainWindow *ui;
 
 	void loudCSS(const QString& path);
-	void makeTextLine(int x, int y, int width, int heigth);
+	void makeTextLine(int x, int y, int width, int heigth, const QString& defaultText);
 
 public:
 

@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 	this->setWindowFlags(Qt::CustomizeWindowHint);
 	this->moveToCentre();
 
-	makeTextLine(0, 0, 800, 75);
+	makeTextLine(0, 0, 800, 75, "Search...");
 }
 
 MainWindow::~MainWindow()
@@ -35,9 +35,10 @@ void MainWindow::moveToCentre()
 	this->move(x, y);
 }
 
-void MainWindow::makeTextLine(int x, int y, int width, int heigth)
+void MainWindow::makeTextLine(int x, int y, int width, int heigth, const QString& defaultText)
 {
-	QLineEdit *textLine = new QLineEdit("Search", this);
+	QLineEdit *textLine = new QLineEdit(this);
+	textLine->setPlaceholderText(defaultText);
 	textLine->setGeometry(x, y, width, heigth);
 }
 

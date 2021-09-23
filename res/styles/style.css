@@ -6,7 +6,7 @@ MainWindow
 QLineEdit
 {
     color: darkgray;
-    font-size: 20px;
+    font-size: 30px;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 11px;
     /*border-color: #5fafde;
