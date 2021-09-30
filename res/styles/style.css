@@ -7,6 +7,7 @@ QLineEdit
 {
     color: darkgray;
     font-size: 30px;
+    padding: 10px;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 11px;
     /*border-color: #5fafde;
