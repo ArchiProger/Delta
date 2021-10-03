@@ -14,6 +14,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
+qt5_wrap_ui(Delta res/ui/mainwindow.ui)
+
 set(SOURCE_FILES
         src/main.cpp
         src/MainWindow/MainWindow.cpp

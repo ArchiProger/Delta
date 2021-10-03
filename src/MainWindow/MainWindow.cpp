@@ -8,17 +8,17 @@
 MainWindow::MainWindow(QWidget *parent)
 : QMainWindow(parent)
 , ui(new Ui::MainWindow)
+, textLine(new QLineEdit(this))
 {
 	ui->setupUi(this);
 
-	QPainterPath painPath;
-    painPath.addRoundedRect(rect(), 10, 10, Qt::AbsoluteSize);
-
-    this->setMask(painPath.toFillPolygon().toPolygon());
-	this->setWindowFlags(Qt::CustomizeWindowHint);
+	this->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowStaysOnTopHint);
 	this->moveToCentre();
 
-	makeTextLine(0, 0, 800, 75, "Search...");
+	textLine->setPlaceholderText("Search...");
+	textLine->setGeometry(0, 0, 800, 75);
+
+	resizeAnimation();
 }
 
 MainWindow::~MainWindow()
@@ -29,17 +29,29 @@ MainWindow::~MainWindow()
 void MainWindow::moveToCentre()
 {
 	QRect screenGeometry = QApplication::desktop()->screenGeometry();
+
 	int x = (screenGeometry.width() - width()) / 2;
 	int y = (screenGeometry.height() - height()) / 3;
 
 	this->move(x, y);
 }
 
-void MainWindow::makeTextLine(int x, int y, int width, int heigth, const QString& defaultText)
+void MainWindow::resizeAnimation()
 {
-	QLineEdit *textLine = new QLineEdit(this);
-	textLine->setPlaceholderText(defaultText);
-	textLine->setGeometry(x, y, width, heigth);
+	QPropertyAnimation *mainWindowAnimation = new QPropertyAnimation(this, "size");
+
+	mainWindowAnimation->setDuration(500);
+	mainWindowAnimation->setEasingCurve(QEasingCurve::Linear);
+	mainWindowAnimation->setEndValue(QSize(800, 500));
+	mainWindowAnimation->start();
+}
+
+void MainWindow::paintEvent(QPaintEvent *event)
+{
+	QPainterPath painPath;
+    painPath.addRoundedRect(this->rect(), 10, 10);
+
+    this->setMask(painPath.toFillPolygon().toPolygon());
 }
 
 

@@ -6,11 +6,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QApplication>
 #include <QtWidgets/QDesktopWidget>
 #include <QFile>
 #include <QPainter>
 #include <QLineEdit>
 #include <QDebug>
+#include <QPropertyAnimation>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,9 +25,10 @@ class MainWindow : public QMainWindow
 private:
 
 	Ui::MainWindow *ui;
+	QLineEdit *textLine;
 
-	void loudCSS(const QString& path);
-	void makeTextLine(int x, int y, int width, int heigth, const QString& defaultText);
+	void paintEvent(QPaintEvent *event) override;
+	void resizeAnimation();
 
 public:
 
