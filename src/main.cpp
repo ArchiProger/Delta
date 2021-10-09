@@ -5,11 +5,15 @@
 #include <QApplication>
 
 #include "MainWindow/MainWindow.h"
+#include "Finder/FinderClass.h"
+
 #include "ui_mainwindow.h"
 
 int main (int argc, char *argv[])
 {
 	QApplication app(argc, argv);
+
+	FinderClass finder;
 
 	QFile file(":/styles/style.css");
 	file.open(QFile::ReadOnly);
@@ -17,12 +21,6 @@ int main (int argc, char *argv[])
 
 	MainWindow *wnd = new MainWindow;
 	wnd->show();
-
-/*	for (int i = 0; i < 100000; i++)
-	{
-		wnd->resize(wnd->width() + 1, wnd->height() + 1);
-		wnd->moveToCentre();
-	}*/
 
 	return app.exec();
 }

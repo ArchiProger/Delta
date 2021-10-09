@@ -18,8 +18,8 @@ qt5_wrap_ui(Delta res/ui/mainwindow.ui)
 
 set(SOURCE_FILES
         src/main.cpp
-        src/MainWindow/MainWindow.cpp
-        src/MainWindow/MainWindow.h
+        src/MainWindow/MainWindow.cpp src/MainWindow/MainWindow.h
+        src/Finder/FinderClass.cpp src/Finder/FinderClass.h
         qres.qrc
         )
 
